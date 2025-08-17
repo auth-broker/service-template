@@ -27,10 +27,10 @@ ______________________________________________________________________
 
 ## Template Checklist
 
-- \[ \] Rename module `src/obo_core/template` ->
-  `src/obo_core/your_package_name`
-- \[ \] Rename tests module `src/obo_core/template` ->
-  `src/obo_core/your_package_name`
+- \[ \] Rename module `src/ab_core/template` ->
+  `src/ab_core/your_package_name`
+- \[ \] Rename tests module `src/ab_core/template` ->
+  `src/ab_core/your_package_name`
 - \[ \] Update `pyproject.toml`: `[project]` section based on your package name
   / versioning etc.
 - \[ \] Update `README.md` references of `python-package-template` ->
@@ -118,15 +118,15 @@ uv add --dev {your-new-package}
 
 ### Namespaces
 
-Packages all share the same namespace `obo_core`. To import this package into
+Packages all share the same namespace `ab_core`. To import this package into
 your project:
 
 ```python
-from obo_core.template import placeholder_func
+from ab_core.template import placeholder_func
 ```
 
-We encourage you to make your package available to all of obo via this
-`obo_core` namespace. The goal is to streamline development, POCs and overall
+We encourage you to make your package available to all of ab via this
+`ab_core` namespace. The goal is to streamline development, POCs and overall
 collaboration.
 
 ______________________________________________________________________
@@ -170,7 +170,7 @@ poetry add python-package-template
 ```python
 # Please update this based on your package!
 
-from obo_core.template import placeholder_func
+from ab_core.template import placeholder_func
 
 
 if __name__ == "__main__":
