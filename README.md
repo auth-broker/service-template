@@ -2,7 +2,7 @@
 
 # Python Package Template
 
-The template repository for creating python packages, shared across DAPE.
+The template repository for creating python packages, shared across auth-broker.
 
 ![Python](https://img.shields.io/badge/Python-3.12-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 ![UV](https://img.shields.io/badge/UV-Fast-6E40C9?style=for-the-badge)
@@ -19,7 +19,7 @@ The template repository for creating python packages, shared across DAPE.
 
 🦜🕸️
 
-[![CI](https://github.com/mattcoulter7/python-package-template/actions/workflows/ci.yaml/badge.svg?branch=main)](https://github.com/mattcoulter7/python-package-template/actions/workflows/ci.yaml)
+[![CI](https://github.com/auth-broker/service-template/actions/workflows/ci.yaml/badge.svg?branch=main)](https://github.com/auth-broker/service-template/actions/workflows/ci.yaml)
 
 </div>
 
@@ -27,9 +27,6 @@ ______________________________________________________________________
 
 ## Template Checklist
 
-- \[ \] Use
-  [github-self-service](https://github.com/iag-hub/github-self-service/actions/workflows/newrepo.yml)
-  portal to create a repository using this template.
 - \[ \] Rename module `src/obo_core/template` ->
   `src/obo_core/your_package_name`
 - \[ \] Rename tests module `src/obo_core/template` ->
@@ -55,7 +52,6 @@ ______________________________________________________________________
 - [Usage](#usage)
 - [Formatting and linting](#formatting-and-linting)
 - [CICD](#cicd)
-- [Credits](#credits)
 
 <!-- tocstop -->
 
@@ -64,8 +60,8 @@ ______________________________________________________________________
 ## Introduction
 
 This template repository aims to create a reusable package template which
-streamlines the creation and publishing of isolated python packages in DAPE.
-This is aligned with the engineering vision @ IAG for better modularisation and
+streamlines the creation and publishing of isolated python packages in auth-broker.
+This is aligned with the engineering vision @ auth-broker for better modularisation and
 reusability of code.
 
 ______________________________________________________________________
