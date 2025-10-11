@@ -1,0 +1,77 @@
+name: Build & Publish Docker image
+
+on:
+  push:
+    branches: [ main ]  # runs when PRs are merged to main
+
+concurrency:
+  group: docker-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  docker:
+    name: Build & Push
+    runs-on: ubuntu-latest
+    environment: dockerhub   # create this env in GitHub and add the secret below
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python (for reading pyproject.toml)
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Extract project version from pyproject.toml
+        id: version
+        shell: bash
+        run: |
+          VERSION=$(python - <<'PY'
+import tomllib, pathlib, sys
+p = pathlib.Path("pyproject.toml")
+if not p.exists():
+    sys.exit("pyproject.toml not found")
+data = tomllib.loads(p.read_text(encoding="utf-8"))
+v = (data.get("project") or {}).get("version")
+if not v:
+    sys.exit("No [project].version in pyproject.toml")
+print(v)
+PY
+)
+          echo "version=${VERSION}" >> "$GITHUB_OUTPUT"
+          echo "Project version: ${VERSION}"
+
+      - name: Compute Docker image name
+        id: img
+        shell: bash
+        run: |
+          REPO_NAME="${GITHUB_REPOSITORY#*/}"
+          REPO_NAME_LC="$(echo "$REPO_NAME" | tr '[:upper:]' '[:lower:]')"
+          echo "name=mattcoulter7/${REPO_NAME_LC}" >> "$GITHUB_OUTPUT"
+          echo "Image: mattcoulter7/${REPO_NAME_LC}"
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: mattcoulter7
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Build and push
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: true
+          tags: |
+            ${{ steps.img.outputs.name }}:${{ steps.version.outputs.version }}
+            ${{ steps.img.outputs.name }}:latest
+          labels: |
+            org.opencontainers.image.source=${{ github.repository }}
+            org.opencontainers.image.version=${{ steps.version.outputs.version }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
