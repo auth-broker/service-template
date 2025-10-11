@@ -3,6 +3,8 @@ name: Build & Publish Docker image
 on:
   push:
     branches: [ main ]  # runs when PRs are merged to main
+  pull_request:
+    branches: [ main ]           # test build on PRs
 
 concurrency:
   group: docker-${{ github.ref }}
