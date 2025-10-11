@@ -2,7 +2,7 @@ name: Build & Publish Docker image
 
 on:
   push:
-    branches: [ main ]  # runs when PRs are merged to main
+    branches: [ main ]           # when PRs are merged to main
   pull_request:
     branches: [ main ]           # test build on PRs
 
@@ -12,9 +12,9 @@ concurrency:
 
 jobs:
   docker:
-    name: Build & Push
+    name: Build & (conditionally) Push
     runs-on: ubuntu-latest
-    environment: dockerhub   # create this env in GitHub and add the secret below
+    environment: dockerhub
     permissions:
       contents: read
 
@@ -22,16 +22,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Set up Python (for reading pyproject.toml)
+      - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.x'
+          python-version: '3.12'
 
       - name: Extract project version from pyproject.toml
         id: version
         shell: bash
         run: |
-          VERSION=$(python - <<'PY'
+          set -euo pipefail
+          python - <<'PY' > version.txt
 import tomllib, pathlib, sys
 p = pathlib.Path("pyproject.toml")
 if not p.exists():
@@ -42,7 +43,7 @@ if not v:
     sys.exit("No [project].version in pyproject.toml")
 print(v)
 PY
-)
+          VERSION="$(cat version.txt)"
           echo "version=${VERSION}" >> "$GITHUB_OUTPUT"
           echo "Project version: ${VERSION}"
 
@@ -50,25 +51,27 @@ PY
         id: img
         shell: bash
         run: |
-          REPO_NAME="${GITHUB_REPOSITORY#*/}"
-          REPO_NAME_LC="$(echo "$REPO_NAME" | tr '[:upper:]' '[:lower:]')"
+          set -euo pipefail
+          REPO_NAME="${GITHUB_REPOSITORY#*/}"   # owner/repo -> repo
+          REPO_NAME_LC="$(printf "%s" "$REPO_NAME" | tr '[:upper:]' '[:lower:]')"
           echo "name=mattcoulter7/${REPO_NAME_LC}" >> "$GITHUB_OUTPUT"
           echo "Image: mattcoulter7/${REPO_NAME_LC}"
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
-      - name: Login to Docker Hub
+      - name: Login to Docker Hub (only on main)
+        if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/main')
         uses: docker/login-action@v3
         with:
           username: mattcoulter7
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Build and push
+      - name: Build (PR) or Build & Push (main)
         uses: docker/build-push-action@v6
         with:
           context: .
-          push: true
+          push: ${{ github.event_name == 'push' && startsWith(github.ref, 'refs/heads/main') }}
           tags: |
             ${{ steps.img.outputs.name }}:${{ steps.version.outputs.version }}
             ${{ steps.img.outputs.name }}:latest
