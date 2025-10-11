@@ -2,9 +2,9 @@ name: Build & Publish Docker image
 
 on:
   push:
-    branches: [ main ]           # when PRs are merged to main
+    branches: [ main ]              # when PRs are merged to main
   pull_request:
-    branches: [ main ]           # test build on PRs
+    branches: [ main ]              # test build on PRs
 
 concurrency:
   group: docker-${{ github.ref }}
@@ -14,7 +14,7 @@ jobs:
   docker:
     name: Build & (conditionally) Push
     runs-on: ubuntu-latest
-    environment: dockerhub
+    environment: dockerhub          # create this env and add DOCKERHUB_TOKEN secret
     permissions:
       contents: read
 
@@ -32,18 +32,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          python - <<'PY' > version.txt
-import tomllib, pathlib, sys
-p = pathlib.Path("pyproject.toml")
-if not p.exists():
-    sys.exit("pyproject.toml not found")
-data = tomllib.loads(p.read_text(encoding="utf-8"))
-v = (data.get("project") or {}).get("version")
-if not v:
-    sys.exit("No [project].version in pyproject.toml")
-print(v)
-PY
-          VERSION="$(cat version.txt)"
+          VERSION=$(python -c "import tomllib, pathlib; p=pathlib.Path('pyproject.toml'); d=tomllib.loads(p.read_text(encoding='utf-8')); v=(d.get('project') or {}).get('version'); print(v) if v else (_ for _ in ()).throw(SystemExit('No [project].version in pyproject.toml'))")
           echo "version=${VERSION}" >> "$GITHUB_OUTPUT"
           echo "Project version: ${VERSION}"
 
@@ -60,7 +49,7 @@ PY
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
-      - name: Login to Docker Hub (only on main)
+      - name: Login to Docker Hub (only on push to main)
         if: github.event_name == 'push' && startsWith(github.ref, 'refs/heads/main')
         uses: docker/login-action@v3
         with:
