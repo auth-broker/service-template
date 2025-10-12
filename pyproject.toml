@@ -29,7 +29,7 @@ description = "A template package template."
 name = "ab-template-service"
 readme = "README.md"
 requires-python = ">=3.12, <4"
-version = "0.2.0"
+version = "0.2.1"
 
 [tool.hatch.build.targets.sdist]
 include = ["src/ab_service"]
