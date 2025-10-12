@@ -35,9 +35,9 @@ ______________________________________________________________________
   / versioning etc.
 - \[ \] Update `README.md` references of `python-package-template` ->
   `your-package-name`
-- \[ \] Add your pypi credentials as `HTTP_BASIC_PYPI_USERNAME` &
-  `HTTP_BASIC_PYPI_PASSWORD` repository variables / secrets respectively. These
-  will be need for the pypi publish cd workflow to succeed.
+- \[ \] Update Dockerfile entrypoint
+- \[ \] Update docker compose port entrypoint
+- \[ \] Update vscode launch.json port and entrypoint
 - \[ \] Remove this section
 
 ______________________________________________________________________
