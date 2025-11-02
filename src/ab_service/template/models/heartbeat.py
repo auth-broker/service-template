@@ -1,11 +1,12 @@
 """Heartbeat ORM Model."""
 
 from datetime import datetime
-from sqlmodel import Field, SQLModel
-from sqlalchemy import Column, DateTime, func
-from ab_core.database.mixins.id import IDMixin
+
 from ab_core.database.mixins.created_at import CreatedAtMixin
+from ab_core.database.mixins.id import IDMixin
 from ab_core.database.mixins.updated_at import UpdatedAtMixin
+from sqlalchemy import Column, DateTime, func
+from sqlmodel import Field
 
 
 class Heartbeat(IDMixin, CreatedAtMixin, UpdatedAtMixin, table=True):
