@@ -4,21 +4,21 @@ requires-python = ">=3.12, <4"
 
 [[package]]
 name = "ab-alembic-auto-migrate"
-version = "0.2.0"
+version = "0.2.1"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "alembic" },
     { name = "pydantic" },
     { name = "sqlmodel" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/4c/a5/7ad71784790ee05e8af837b02ebe3264b2a8a48ab43ee597d33974292667/ab_alembic_auto_migrate-0.2.0.tar.gz", hash = "sha256:1a0464d15db1f2163f7a4a1326382b1f2bd99f7f2f1cf6474e377058aedc206c", size = 6998, upload-time = "2025-09-28T09:52:45.209Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/53/ff/d7a1c78dc8bbf721d91a20800e964bbed3ed0e85c7da48c10f637fb6a688/ab_alembic_auto_migrate-0.2.1.tar.gz", hash = "sha256:e4b0843d6a4e75542b1be5e707538c4dad7ec3dea82e9d8b26c8d2315d0646ad", size = 6997, upload-time = "2026-01-11T04:30:53.181Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/16/ca/95e6a0706be38a4ef268b2a52c3edae1f3b22078caddd4d07f26b02a0f9c/ab_alembic_auto_migrate-0.2.0-py3-none-any.whl", hash = "sha256:fda3c62e1acb8d90230063718662c0785636474ffa4121d5919db554e41cae7e", size = 5670, upload-time = "2025-09-28T09:52:44.082Z" },
+    { url = "https://files.pythonhosted.org/packages/63/4e/35178c02a820efb0fcbcbcaf22da3205bce5ec86ef8ba1182ae539a5d52a/ab_alembic_auto_migrate-0.2.1-py3-none-any.whl", hash = "sha256:0e52907cf9e3dec8a6468ca1d0f4da9233e0a9a259195250048a95f81828a064", size = 5666, upload-time = "2026-01-11T04:30:54.321Z" },
 ]
 
 [[package]]
 name = "ab-cache"
-version = "0.1.4"
+version = "0.1.6"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "ab-dependency" },
@@ -29,14 +29,14 @@ dependencies = [
     { name = "sqlmodel" },
     { name = "uuid7" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/44/a1/e3481048c2c746184e2e03dd33dd00666132d665620018c2b38ce5f047ae/ab_cache-0.1.4.tar.gz", hash = "sha256:a36dd41292e384e7fc4d822ab3c2176cf0985034c88f3a4f040bf38988e2cf21", size = 10251, upload-time = "2025-09-27T08:05:15.43Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/b4/e3/5321b9303da5cb085c0cf3c7cc94e6f4bfcab6224d01007c2fa433a05306/ab_cache-0.1.6.tar.gz", hash = "sha256:616288d9c5072596334ec2e34439bb5ff238c0d17510818bd8e5fd1027fdc6d2", size = 10259, upload-time = "2026-01-11T04:43:36.575Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/b7/c7/255f0e381850d4c4dd500df01333ef567083910a87aab1a676c30f46a2e6/ab_cache-0.1.4-py3-none-any.whl", hash = "sha256:a544764267cb0d5cf7bb6ca2717213215546a3060b882d183ddf43cedfafab29", size = 13148, upload-time = "2025-09-27T08:05:14.225Z" },
+    { url = "https://files.pythonhosted.org/packages/88/03/217e5b2354af7e93cfb252a2084cc928f7f5209f70d64f59d3c6b25fed7c/ab_cache-0.1.6-py3-none-any.whl", hash = "sha256:cfc7bf05dc5f23e3ba7c30f40c230390beca01195d59a7c2b0bbc4afeb8474a1", size = 13156, upload-time = "2026-01-11T04:43:34.9Z" },
 ]
 
 [[package]]
 name = "ab-database"
-version = "0.2.2"
+version = "0.2.4"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "ab-dependency" },
@@ -45,9 +45,9 @@ dependencies = [
     { name = "sqlmodel" },
     { name = "uuid7" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/66/3b/5fdae03e70f2ebf98e04c3637b487223b590c530fc3b9f1745d61d0a6e48/ab_database-0.2.2.tar.gz", hash = "sha256:3805b043735b260685490efcfc532a04b59f6afc8d2befacf7b907136e46f311", size = 7051, upload-time = "2025-09-28T10:15:44.772Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/b4/a7/3df75c63c9c1a0b047504c2707bdf9ee2d87b2c21bcce16582dab81783f3/ab_database-0.2.4.tar.gz", hash = "sha256:ccb06d87a0c27ea890283ec8d9cd3fe9a8049d11c72433b0a2192e17578d8eb3", size = 7050, upload-time = "2026-01-11T04:43:24.605Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/7c/ce/8de110a64bd21f4ea7ce0d5639692c8a7d8883843496797e664bbca76b62/ab_database-0.2.2-py3-none-any.whl", hash = "sha256:b45481997b3b0a40f175e4fee8fe3097d531f3ebfb10b0f110d7aebfe5bcc566", size = 9933, upload-time = "2025-09-28T10:15:43.485Z" },
+    { url = "https://files.pythonhosted.org/packages/82/ec/51b77c792d0337fb966552cf55eb06557ad7bff8293994f763e2f857d883/ab_database-0.2.4-py3-none-any.whl", hash = "sha256:411a6452f4a8ea5f8e3495d1a7b35dbe55bd890f3566b8dddfec2f98b114e200", size = 9935, upload-time = "2026-01-11T04:43:22.999Z" },
 ]
 
 [package.optional-dependencies]
@@ -78,35 +78,36 @@ wheels = [
 
 [[package]]
 name = "ab-logging"
-version = "0.1.2"
+version = "0.1.3"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "pydantic" },
     { name = "rich" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/9a/d8/b4a88949203d44ca317fd783dfea1d4542afd1fc7568d0c67db5477f7167/ab_logging-0.1.2.tar.gz", hash = "sha256:83b6a42fe83ae541ae0800963705d5cde10550d307c7c731526d5b05511a2530", size = 7180, upload-time = "2025-10-05T02:56:24.169Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/6f/9e/6ffc319c61181f47729b5faba6173da7dd9eea9b29ad531e05249e768691/ab_logging-0.1.3.tar.gz", hash = "sha256:ae99f004f5e4238a12381990fcc107d850580bb194759c0a6b50f8ce4801f5de", size = 7181, upload-time = "2026-01-11T04:26:44.086Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/e2/29/2a1acf52fa162c270a3c15da38c007e8567e6002b97b2122955986b7b741/ab_logging-0.1.2-py3-none-any.whl", hash = "sha256:6cbd499109963e068a4b2f87bd0add680834126fc3ce0d5842bae5c4994b5f61", size = 5666, upload-time = "2025-10-05T02:56:22.731Z" },
+    { url = "https://files.pythonhosted.org/packages/53/c2/c3abe1c1c2bc951ea9369a67dfbae242906a8fb5fbd9463335995039250a/ab_logging-0.1.3-py3-none-any.whl", hash = "sha256:1c2a0e2986147b4220a08492f80f4d0fb96c21991cf701caafa01ea021216c5a", size = 5666, upload-time = "2026-01-11T04:26:42.203Z" },
 ]
 
 [[package]]
 name = "ab-sqlalchemy-fastapi-http-exceptions"
-version = "0.1.0"
+version = "0.1.2"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "ab-database" },
+    { name = "ab-dependency" },
     { name = "fastapi" },
     { name = "pydantic" },
     { name = "sqlalchemy" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/c2/a4/218f9a112b293e2e1a71774efa150d7e293b0cd09d50d85ba2c48f11de7f/ab_sqlalchemy_fastapi_http_exceptions-0.1.0.tar.gz", hash = "sha256:a50fe247039bde00c9a25fcc11b2a35988aecaa56b7c4db2c84db3910cb21a01", size = 12203, upload-time = "2025-11-02T06:45:58.144Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/58/29/7b95c901a516bea4f3dcff8b2135b57086c675d2256fee4ade687ccc66ef/ab_sqlalchemy_fastapi_http_exceptions-0.1.2.tar.gz", hash = "sha256:d694d4dd9a9ecbb7993775b9f718b2b8abfeac090923a51675312e121f691643", size = 12222, upload-time = "2026-01-11T04:42:16.786Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/60/bb/77091b754cf36eb2793df95a50b3a17ab21a87f3327cfd7565ae6757968e/ab_sqlalchemy_fastapi_http_exceptions-0.1.0-py3-none-any.whl", hash = "sha256:08a864a37a80ce774b4be479b7e20aae109902003ef8f4dde109791440a68824", size = 18198, upload-time = "2025-11-02T06:45:56.506Z" },
+    { url = "https://files.pythonhosted.org/packages/f2/b6/77aef252cbdfea70407da1cf59ba9ed4b3f7aba2ec3f1a3c411db66bfe38/ab_sqlalchemy_fastapi_http_exceptions-0.1.2-py3-none-any.whl", hash = "sha256:02cac09e9fa28f54917630f4c62fe86cab052756060134edb1110a49497ddca4", size = 18206, upload-time = "2026-01-11T04:42:18.253Z" },
 ]
 
 [[package]]
 name = "ab-template-service"
-version = "0.2.1"
+version = "0.2.2"
 source = { editable = "." }
 dependencies = [
     { name = "ab-alembic-auto-migrate" },
@@ -133,10 +134,10 @@ dev = [
 
 [package.metadata]
 requires-dist = [
-    { name = "ab-alembic-auto-migrate", specifier = ">=0.2.0,<1" },
-    { name = "ab-database", extras = ["sqlite-async", "postgres-sync", "postgres-async"], specifier = ">=0.2.2,<1" },
-    { name = "ab-logging", specifier = ">=0.1.2" },
-    { name = "ab-sqlalchemy-fastapi-http-exceptions", specifier = ">=0.1.0" },
+    { name = "ab-alembic-auto-migrate", specifier = ">=0.2.0,<0.3.0" },
+    { name = "ab-database", extras = ["sqlite-async", "postgres-sync", "postgres-async"], specifier = ">=0.2.2,<0.3.0" },
+    { name = "ab-logging", specifier = ">=0.1.2,<0.2.0" },
+    { name = "ab-sqlalchemy-fastapi-http-exceptions", specifier = ">=0.1.0,<0.2.0" },
     { name = "fastapi", specifier = ">=0.115.14,<0.116" },
     { name = "pydantic", extras = ["email"], specifier = ">=2.11.7,<3" },
     { name = "uvicorn", specifier = ">=0.35.0,<0.36" },
@@ -144,7 +145,7 @@ requires-dist = [
 
 [package.metadata.requires-dev]
 dev = [
-    { name = "ab-test-fixtures", specifier = ">=0.1.5,<1" },
+    { name = "ab-test-fixtures", specifier = ">=0.1.5,<0.2.0" },
     { name = "debugpy", specifier = ">=1.8.14,<2" },
     { name = "isort", specifier = ">=6.0.1,<7" },
     { name = "pre-commit", specifier = ">=4.2.0,<5" },
@@ -157,7 +158,7 @@ dev = [
 
 [[package]]
 name = "ab-test-fixtures"
-version = "0.1.6"
+version = "0.1.7"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "ab-cache" },
@@ -165,9 +166,9 @@ dependencies = [
     { name = "pytest" },
     { name = "pytest-asyncio" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/76/b2/d44b8bbb52d5a213ab59c3d40c13bddb5189686d18a4d1d718fccdbda5da/ab_test_fixtures-0.1.6.tar.gz", hash = "sha256:df4fd85424f00aab6878672b175e5e64b4a6da35776493a5a1a4cfed158b6318", size = 4362, upload-time = "2025-10-12T04:17:07.949Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/d3/5e/1a1e9d3ac674f0f8056064c3610569bdab9e22745d20baeeaa1d0a0ad6c8/ab_test_fixtures-0.1.7.tar.gz", hash = "sha256:2f42a8e85155ce22c3ca35e063d9105947d20331c3edcbf45bc210b05475e9c9", size = 4364, upload-time = "2026-01-11T04:29:18.344Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/6e/66/d01a7ca6ba06ed135349fd60cc6e23ca27e114d2f2065850bc9d174afe5f/ab_test_fixtures-0.1.6-py3-none-any.whl", hash = "sha256:74071fbaa0a739e3e96aa9e33bd7adaab6a94a7b2dd51608e62ad852e1fd1276", size = 3803, upload-time = "2025-10-12T04:17:06.761Z" },
+    { url = "https://files.pythonhosted.org/packages/66/92/2d0394799032f49adae76bed811c16ef9d7a3e0d795098a740a6b965843a/ab_test_fixtures-0.1.7-py3-none-any.whl", hash = "sha256:70a04665fe9038c12559dbf8bfed18bc34d735ff2e0084e36f21a10d0d57b9ef", size = 3808, upload-time = "2026-01-11T04:29:16.889Z" },
 ]
 
 [[package]]

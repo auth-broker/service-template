@@ -34,7 +34,7 @@ build-docker:
 
 .PHONY: run-docker ## Runs containers with watching
 run-docker:
-	docker compose up
+	docker compose up -d
 
 
 .PHONY: test-docker ## run unit tests in docker
